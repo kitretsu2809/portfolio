@@ -1,0 +1,88 @@
+{
+  "personal": {
+    "name": "Hrushikesh R. Waghmare",
+    "profession": "Full Stack Developer",
+    "tagline": "Building elegant solutions with modern technologies",
+    "email": "hrushikesh280904@gmail.com / waghmare_hr@ph.iitr.ac.in",
+    "location": "Roorkee, India",
+    "joinDate": "July 2022",
+    "bio": "Passionate developer focused on creating elegant solutions to complex problems. Experienced in modern web technologies and system design."
+  },
+  "skills": [
+    "React & Next.js",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "Django",
+    "PostgreSQL & MongoDB",
+    "Blockchain",
+    "Agentic AI",
+    "Machine Learning",
+    "Data Science",
+    "Database Design",
+    "Cloud Architecture",
+    "UI/UX Design",
+    "DevOps"
+  ],
+  "experience": [
+    {
+      "role": "Developer",
+      "company": "NCC Web Dev Team - IIT Roorkee",
+      "period": "Feb 2024 - Dec-2024",
+      "description": "Working on various web development projects for the institute NCC Web Dev Team Migration of whole web page to Next.js from plain HTML/CSS/JS"
+    },
+    {
+      "role": "Flutter Developer",
+      "company": "MDG Space",
+      "period": "2023 - 2025",
+      "description": "Maintained and developed features for the clubs web application, focusing on performance optimization and user experience."
+    }
+  ],
+  "techStack": {
+    "core": [
+      "Framework: Next.js  , Flutter (Android) , ",
+      "Styling: Tailwind CSS , Bootstrap , Material UI",
+      "Animation: Framer Motion , Lottie ,Three.js",
+      "Version Control: Git & GitHub"
+    ],
+    "frontend": [
+      "Language: TypeScript, JavaScript (ES12+) , C++ , Python, Solidity, Dart",
+      "Core: React, Redux (Zustand/Jotai for modern state)",
+      "Testing: Jest, React Testing Library"
+    ],
+    "backend": [
+      "Runtime: Node.js, Python/Django (for large scale)",
+      "Database: PostgreSQL, MongoDB (for flexibility)",
+      "API: GraphQL (Apollo) / REST"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "name": "MinuteMeet",
+      "description": "App for Peers to decide meeting place and quickest route easily with transport options available",
+      "tech": ["Flutter", "Firebase Database", "Node.js"],
+      "status": "Development"
+    },
+    {
+      "id": 2,
+      "name": "Fatigue-Detection",
+      "description": "Real-time mental fatigue detection system using facial recognition and eye-tracking and blinking patterns",
+      "tech": ["Python", "OpenCV", "HTML", "CSS", "JavaScript", "Flask"],
+      "status": "Development"
+    },
+    {
+      "id": 3,
+      "name": "Kabootar-chat-app",
+      "description": "A decentralized messaging app leveraging blockchain for secure and private communication",
+      "tech": ["Flutter", "Blockchain", "Openchain API", "Node.js", "IPFS", "Solidity"],
+      "status": "Development"
+    }
+  ],
+  "contact": {
+    "email": "your.email@example.com",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername"
+  }
+}

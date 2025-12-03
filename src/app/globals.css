@@ -1,0 +1,62 @@
+/* src/app/globals.css */
+/* stylelint-disable at-rule-no-unknown */
+@import 'tailwindcss';
+
+/* Fallback CSS variables and helper classes for project-specific theme tokens.
+   These provide reasonable defaults if a Tailwind config file is removed.
+*/
+:root {
+  --pop-dark: #1e1e1e;
+  --pop-accent: #4845a3;
+  --pop-light-accent: #6764be;
+  --pop-text-light: #f0f0f0;
+  --pop-text-muted: #a0a0a0;
+  --terminal-green: #00ff00;
+  --terminal-red: #ff5555;
+  /* Desktop wallpaper — set this to `url('/wallpapers/my-wallpaper.jpg')` after you add your image
+     to `public/wallpapers/your-file.jpg`. Leave blank or set to 'none' to use the solid color fallback. */
+  --desktop-wallpaper: none;
+}
+
+/* Basic utility fallbacks used across the app */
+.bg-pop-dark { background-color: var(--pop-dark) !important; }
+.bg-pop-dark-60 { background-color: rgba(30,30,30,0.6) !important; }
+.bg-pop-accent { background-color: var(--pop-accent) !important; }
+.bg-pop-light-accent { background-color: var(--pop-light-accent) !important; }
+.text-pop-text-light { color: var(--pop-text-light) !important; }
+.text-pop-text-muted { color: var(--pop-text-muted) !important; }
+.text-terminal-green { color: var(--terminal-green) !important; }
+.text-terminal-red { color: var(--terminal-red) !important; }
+.border-pop-light-accent { border-color: rgba(103,100,190,0.2) !important; }
+.shadow-window { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.05) !important; }
+
+/* Crucial for a desktop experience: 
+  The HTML and Body must fill the entire screen, and we hide overflow 
+  to prevent scrolling when windows are dragged or resized off-screen.
+*/
+html, body, #__next {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent body scroll */
+}
+
+/* Custom utility for the desktop feel */
+.desktop-surface {
+  @apply h-screen w-screen relative; 
+  /* Wallpaper support */
+  background-image: var(--desktop-wallpaper);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* Dark overlay so icons and windows remain readable on bright wallpapers */
+  background-color: var(--pop-dark);
+  background-blend-mode: forward-light;
+}
+
+/* Example usage (uncomment in your workspace.css or set at runtime):
+:root { --desktop-wallpaper: url('/wallpapers/my-wallpaper.jpg'); }
+
+Place your image at `public/wallpapers/my-wallpaper.jpg` and set the variable above to apply it.
+*/
