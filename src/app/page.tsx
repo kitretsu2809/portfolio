@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="w-full h-full relative">
       <div style={{ zIndex: 20 }} className="relative">
       </div>
-      <div className="absolute top-4 left-4 flex flex-col space-y-2">
+      <div className="absolute top-4 left-4 flex flex-col space-y-2 hidden md:flex">
         <DesktopIcon 
           title="Terminal" 
           icon="💻" 

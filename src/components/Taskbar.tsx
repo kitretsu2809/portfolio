@@ -48,12 +48,13 @@ const DockIcon: React.FC<DockItem> = ({ name, icon, color }) => {
   return (
     <motion.button
       title={name}
-      className="h-12 w-12 flex items-center justify-center p-2 rounded-xl transition-colors relative focus:outline-none hover:bg-white/10"
-      whileHover={{ scale: 1.3 }}
+      className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center p-1.5 md:p-2 rounded-xl transition-colors relative focus:outline-none hover:bg-white/10 active:bg-white/20"
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.95 }}
       transition={{ type: 'spring', stiffness: 500, damping: 25 }}
       onClick={handleLaunch}
     >
-      <div className={`${color} transition-all`}>
+      <div className={`${color} transition-all scale-90 md:scale-100`}>
         {icon}
       </div>
     </motion.button>
@@ -63,11 +64,42 @@ const DockIcon: React.FC<DockItem> = ({ name, icon, color }) => {
 
 const Taskbar: React.FC = () => {
   const [time, setTime] = React.useState(new Date());
+  const [isVisible, setIsVisible] = React.useState(true);
+  const [isHovering, setIsHovering] = React.useState(false);
+  const hideTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const { openWindows } = useWindowManager();
 
   React.useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
+
+  React.useEffect(() => {
+    if (openWindows.length > 0 && !isHovering) {
+      if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = setTimeout(() => {
+        setIsVisible(false);
+      }, 500);
+    } else if (openWindows.length === 0) {
+      setIsVisible(true);
+    }
+
+    return () => {
+      if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
+    };
+  }, [openWindows.length, isHovering]);
+
+  React.useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const isNearBottom = e.clientY > window.innerHeight - 80;
+      if (isNearBottom && openWindows.length > 0) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [openWindows.length]);
 
   const formattedTime = time.toLocaleTimeString('en-US', {
     hour: '2-digit',
@@ -76,25 +108,32 @@ const Taskbar: React.FC = () => {
   });
   
   return (
-    <div
+    <motion.div
       className="z-50"
-      style={{ position: 'fixed', bottom: 16, left: '50%', transform: 'translateX(-50%)', zIndex: 9999 }}
+      style={{ position: 'fixed', bottom: 0, left: '50%', zIndex: 9999, maxWidth: 'calc(100vw - 16px)' }}
       data-testid="taskbar-root"
+      animate={{
+        x: '-50%',
+        y: isVisible ? -8 : 80
+      }}
+      transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="bg-pop-dark/40 backdrop-blur-3xl rounded-3xl p-2.5 shadow-2xl flex items-center space-x-2 border border-white/20 transition-all duration-300">
-        <div className="flex space-x-1.5">
+      <div className="bg-pop-dark/40 backdrop-blur-3xl rounded-2xl md:rounded-3xl p-1.5 md:p-2.5 shadow-2xl flex items-center space-x-1 md:space-x-2 border border-white/20 transition-all duration-300 overflow-x-auto">
+        <div className="flex space-x-0.5 md:space-x-1.5">
           {dockItems.map(item => (
             <DockIcon key={item.id} {...item} />
           ))}
         </div>
-        <div className="h-8 w-px bg-white/30 mx-3"></div>
-        <div className="flex items-center px-2">
-          <span className="text-pop-text-light font-sans text-sm font-medium opacity-80">
+        <div className="h-6 md:h-8 w-px bg-white/30 mx-1 md:mx-3"></div>
+        <div className="flex items-center px-1 md:px-2">
+          <span className="text-pop-text-light font-sans text-xs md:text-sm font-medium opacity-80 whitespace-nowrap">
             {formattedTime}
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

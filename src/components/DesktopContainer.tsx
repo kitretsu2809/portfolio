@@ -67,11 +67,8 @@ const DesktopContainer: React.FC<DesktopContainerProps> = ({ children }) => {
   };
 
   return (
-    <div className="desktop-surface h-screen w-screen relative bg-pop-dark">
-      {/* This is the main working area of the desktop.
-        Any floating windows (children) will appear here.
-      */}
-      <main className="w-full h-full relative p-4 pb-28 z-10">
+    <div className="desktop-surface h-screen w-screen relative bg-pop-dark overflow-hidden">
+      <main className="w-full h-full relative p-0 md:p-4 pb-16 md:pb-28 z-10">
         {children}
 
         {/* Render open windows from the Window Manager */}
