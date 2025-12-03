@@ -6,7 +6,8 @@
     "email": "hrushikesh280904@gmail.com / waghmare_hr@ph.iitr.ac.in",
     "location": "Roorkee, India",
     "joinDate": "July 2022",
-    "bio": "Passionate developer focused on creating elegant solutions to complex problems. Experienced in modern web technologies and system design."
+    "bio": "Passionate developer focused on creating elegant solutions to complex problems. Experienced in modern web technologies and system design.",
+    "photo":"/images/avatar.jpg"
   },
   "skills": [
     "React & Next.js",

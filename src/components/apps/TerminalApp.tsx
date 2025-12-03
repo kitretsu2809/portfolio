@@ -14,13 +14,13 @@ interface TerminalLine {
 const commands: TerminalLine[] = [
   { id: 1, type: 'command', content: 'cat ~/config/tech_stack.txt' },
   { id: 2, type: 'output', content: [
-    "╔═══════════════════════════════════════════════════════════╗",
-    "║                                                           ║",
-    `║  ${portfolioData.personal.name} - ${portfolioData.personal.profession} ║`,
-    "║                                                           ║",
-    `║  ${portfolioData.personal.tagline}                 ║`,
-    "║                                                           ║",
-    "╚═══════════════════════════════════════════════════════════╝",
+    "╔════════════════════════════════════════════════════════════════╗",
+    "║                                                                ║",
+    "║  Hrushikesh R. Waghmare - Full Stack Developer                ║",
+    "║                                                                ║",
+    "║  Building elegant solutions with modern technologies           ║",
+    "║                                                                ║",
+    "╚════════════════════════════════════════════════════════════════╝",
     "",
     "--- CORE STACK ---",
     ...portfolioData.techStack.core,
@@ -72,11 +72,11 @@ const TerminalApp: React.FC = () => {
   };
 
   return (
-    <div className="font-mono text-sm bg-black p-4 h-full w-full overflow-hidden text-terminal-green">
+    <div className="font-mono text-xs md:text-sm bg-black p-4 h-full w-full overflow-hidden text-terminal-green">
       <div 
         ref={terminalRef} 
         className="h-[calc(100%-2rem)] overflow-y-auto pr-2"
-        style={{ scrollbarWidth: 'none' }}
+        style={{ scrollbarWidth: 'none', fontFamily: 'monospace', letterSpacing: '0' }}
       >
         <div className="mb-4 text-sm text-pop-accent font-semibold">
           Welcome to devOS v1.0. (c) 2025. Running on Next.js/Tailwind.

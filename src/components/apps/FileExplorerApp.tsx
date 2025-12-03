@@ -133,7 +133,7 @@ const FileExplorerApp: React.FC = () => {
   );
 
   return (
-    <div className="w-full h-full bg-pop-dark/95 text-pop-text-light p-6 overflow-y-auto">
+    <div className="w-full h-full bg-pop-dark/95 text-pop-text-light p-3 md:p-6 text-xs md:text-sm overflow-y-auto">
       {currentView === 'list' 
         ? renderListView() 
         : selectedProject && renderProjectView(selectedProject)
