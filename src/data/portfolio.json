@@ -7,7 +7,7 @@
     "location": "Roorkee, India",
     "joinDate": "July 2022",
     "bio": "Passionate developer focused on creating elegant solutions to complex problems. Experienced in modern web technologies and system design.",
-    "photo":"/images/avatar.jpg"
+    "photo": "/images/avatar.jpg"
   },
   "skills": [
     "React & Next.js",
@@ -60,24 +60,109 @@
   "projects": [
     {
       "id": 1,
-      "name": "MinuteMeet",
-      "description": "App for Peers to decide meeting place and quickest route easily with transport options available",
-      "tech": ["Flutter", "Firebase Database", "Node.js"],
+      "name": "Kabootar-chat-app",
+      "description": "A decentralized messaging app leveraging blockchain for secure and private communication.",
+      "tech": [
+        "Flutter",
+        "Blockchain",
+        "Openchain API",
+        "Node.js",
+        "IPFS",
+        "Solidity"
+      ],
       "status": "Development"
     },
     {
       "id": 2,
-      "name": "Fatigue-Detection",
-      "description": "Real-time mental fatigue detection system using facial recognition and eye-tracking and blinking patterns",
-      "tech": ["Python", "OpenCV", "HTML", "CSS", "JavaScript", "Flask"],
+      "name": "DeepLearningCT",
+      "description": "DL model for tuning sparse CT images. Focuses on tomographic image reconstruction using Convolutional Neural Networks.",
+      "tech": [
+        "Python",
+        "Deep Learning",
+        "CNNs",
+        "ASTRA Toolbox"
+      ],
       "status": "Development"
     },
     {
       "id": 3,
-      "name": "Kabootar-chat-app",
-      "description": "A decentralized messaging app leveraging blockchain for secure and private communication",
-      "tech": ["Flutter", "Blockchain", "Openchain API", "Node.js", "IPFS", "Solidity"],
+      "name": "chootu_personal_assistant",
+      "description": "A local voice assistant that listens for the wake word 'chhotu' and executes system commands via Agentic AI.",
+      "tech": [
+        "Python",
+        "OpenClaw",
+        "Agentic AI",
+        "Linux"
+      ],
       "status": "Development"
+    },
+    {
+      "id": 4,
+      "name": "portfolio",
+      "description": "Personal developer portfolio to showcase software engineering and deep learning projects.",
+      "tech": [
+        "TypeScript",
+        "Frontend Development"
+      ],
+      "status": "Development"
+    },
+    {
+      "id": 5,
+      "name": "fatigue-detection",
+      "description": "Fund AI Project focused on monitoring and detecting user fatigue.",
+      "tech": [
+        "Python",
+        "AI/ML"
+      ],
+      "status": "Completed"
+    },
+    {
+      "id": 6,
+      "name": "Rocket.Chat (Open Source)",
+      "description": "Open-source fork and contribution to Rocket.Chat, a secure communications OS for mission-critical operations.",
+      "tech": [
+        "TypeScript",
+        "Open Source Contribution"
+      ],
+      "status": "Maintenance"
+    },
+    {
+      "id": 7,
+      "name": "car-game",
+      "description": "A simple browser-based game where the objective is to navigate and avoid obstacles.",
+      "tech": [
+        "HTML",
+        "Game Development"
+      ],
+      "status": "Completed"
+    },
+    {
+      "id": 8,
+      "name": "minutemeet",
+      "description": "Python-based application logic and development.",
+      "tech": [
+        "Python"
+      ],
+      "status": "Completed"
+    },
+    {
+      "id": 9,
+      "name": "test-app",
+      "description": "Sandbox application for testing Python scripts and backend logic.",
+      "tech": [
+        "Python"
+      ],
+      "status": "Completed"
+    },
+    {
+      "id": 10,
+      "name": "repo_link_contribution",
+      "description": "Forked open-source repository for managing and contributing to community links.",
+      "tech": [
+        "Python",
+        "Open Source Contribution"
+      ],
+      "status": "Maintenance"
     }
   ],
   "contact": {
