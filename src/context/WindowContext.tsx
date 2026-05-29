@@ -24,7 +24,6 @@ interface WindowProviderProps {
 
 export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
   const [openWindows, setOpenWindows] = useState<WindowProps[]>([]);
-  const [maxZIndex, setMaxZIndex] = useState(100);
   const recentlyClosedRef = React.useRef<Record<string, number>>({});
   const RECENTLY_CLOSED_MS = 600;
 
@@ -39,7 +38,7 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
 
       const next = prevWindows.map(w => w.id === id ? { ...w, zIndex: nextZ } : w);
 
-      setMaxZIndex(nextZ);
+
 
       return next;
     });
@@ -59,13 +58,13 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       if (exists) {
         const currentMax = prevWindows.reduce((m, w) => Math.max(m, w.zIndex), 0);
         const nextZ = currentMax + 1;
-        setMaxZIndex(nextZ);
+
         return prevWindows.map(w => w.id === id ? { ...w, zIndex: nextZ } : w);
       }
 
       const currentMax = prevWindows.reduce((m, w) => Math.max(m, w.zIndex), 0);
       const newZ = currentMax + 1;
-      setMaxZIndex(newZ);
+
 
       const newWindow: WindowProps = {
         id,

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, PanInfo, Transition } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import { Minus, Square, X, Maximize } from 'lucide-react';
 
 interface WindowFrameProps {
@@ -16,7 +16,6 @@ interface WindowFrameProps {
 }
 
 const WindowFrame: React.FC<WindowFrameProps> = ({ 
-  id,
   title, 
   children, 
   initialWidth = 600, 
@@ -75,7 +74,7 @@ const WindowFrame: React.FC<WindowFrameProps> = ({
       window.addEventListener('resize', onResize);
       return () => window.removeEventListener('resize', onResize);
     }
-  }, [isMobile, isMaximized]);
+  }, [isMobile, isMaximized, initialHeight, initialWidth, size.height, size.width]);
 
   return (
     <motion.div

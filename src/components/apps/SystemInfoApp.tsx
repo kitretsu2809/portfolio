@@ -8,7 +8,7 @@ const SystemInfoApp: React.FC = () => {
   React.useEffect(() => {
     setInfo({
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : 'server',
-      platform: typeof navigator !== 'undefined' ? (navigator as any).platform || 'unknown' : 'server',
+      platform: typeof navigator !== 'undefined' ? ((navigator as unknown as Record<string, unknown>).platform as string) || 'unknown' : 'server',
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0,
     });

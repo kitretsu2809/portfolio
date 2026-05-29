@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Typewriter from '../apps/Typewriter';
-import WindowFrame from '../WindowFrame';
 import portfolioData from '@/data/portfolio.json';
 
 interface TerminalLine {
@@ -36,16 +35,10 @@ const commands: TerminalLine[] = [
 ];
 
 const TerminalApp: React.FC = () => {
-  const [history, setHistory] = useState<TerminalLine[]>([]);
+  const [history, setHistory] = useState<TerminalLine[]>(commands.length > 0 ? [commands[0]] : []);
   const [input, setInput] = useState<string>('');
   const [isTyping, setIsTyping] = useState(true); // Control for the initial typewriter effect
   const terminalRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (commands.length > 0) {
-      setHistory([commands[0]]);
-    }
-  }, []);
 
   useEffect(() => {
     if (terminalRef.current) {
@@ -102,11 +95,7 @@ const TerminalApp: React.FC = () => {
               <div className="text-terminal-green/90 leading-relaxed">
                 {Array.isArray(line.content) ? line.content.map((text, i) => (
                   <p key={i} className="my-0">
-                    {index === 1 && line.type === 'output' ? (
-                      <Typewriter text={text} delay={50} />
-                    ) : (
-                      text
-                    )}
+                    {text}
                   </p>
                 )) : (
                     <p>{line.content}</p>

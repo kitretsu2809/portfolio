@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-import TerminalApp from '@/components/apps/TerminalApp';
-import WindowFrame from '@/components/WindowFrame';
 import DesktopIcon from '@/components/DesktopIcon'; // Keeping this for the desktop aesthetic
 import { useWindowManager } from '@/context/WindowContext';
 
@@ -11,7 +9,7 @@ export default function HomePage() {
   
   React.useEffect(() => {
     launchApp('terminal', { title: 'Terminal - Tech Stack', initialWidth: 750, initialHeight: 500 });
-  }, []);
+  }, [launchApp]);
 
   return (
     <div className="w-full h-full relative">

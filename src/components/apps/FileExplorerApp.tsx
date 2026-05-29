@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Folder, FileText, ArrowLeft, Code, Link, GitBranch } from 'lucide-react';
+import { Folder, ArrowLeft, Link, GitBranch } from 'lucide-react';
 import { motion } from 'framer-motion';
 import portfolioData from '@/data/portfolio.json';
 

@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, Fira_Code } from 'next/font/google';
 import './globals.css';
 import DesktopContainer from '@/components/DesktopContainer';
-import { use } from 'react';
-import { Wind } from 'lucide-react';
 import { WindowProvider } from '@/context/WindowContext';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });

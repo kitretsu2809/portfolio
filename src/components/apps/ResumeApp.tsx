@@ -6,7 +6,7 @@ const ResumeApp: React.FC = () => {
   return (
     <div className="w-full h-full p-4 md:p-6 text-pop-text-light text-xs md:text-sm overflow-y-auto">
       <h1 className="text-3xl font-extrabold text-pop-accent mb-2">About / Resume</h1>
-      <p className="text-pop-text-muted/90 mb-4 md:mb-6">Hi — I'm a developer creating delightful web experiences. This demo site shows a portfolio built as a desktop-like environment.</p>
+      <p className="text-pop-text-muted/90 mb-4 md:mb-6">Hi — I&apos;m a developer creating delightful web experiences. This demo site shows a portfolio built as a desktop-like environment.</p>
 
       <section className="mb-6">
         <h2 className="text-lg md:text-xl font-semibold text-pop-text-light">Experience</h2>

@@ -15,7 +15,7 @@ const ApplicationsApp: React.FC = () => {
     bio: portfolioData.personal.bio,
     skills: portfolioData.skills,
     experience: portfolioData.experience,
-    photo: (portfolioData.personal as any)?.photo || null
+    photo: ((portfolioData.personal as Record<string, unknown>)?.photo as string) || null
   };
 
   return (
